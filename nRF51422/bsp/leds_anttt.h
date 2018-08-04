@@ -19,7 +19,7 @@ RESULT FROM USING THIS FIRMWARE IN WHOLE OR IN PART.
 /******************************************************************************
 Type Definitions
 ******************************************************************************/
-
+typedef enum{RED,YLW,GRN,BLU}LedNumberType;
 /******************************************************************************
 * Constants
 ******************************************************************************/
@@ -28,6 +28,9 @@ Type Definitions
 /******************************************************************************
 * Function Declarations
 ******************************************************************************/
+void LedOn(LedNumberType _led);
+void LedOff(LedNumberType _led);
+//void delay(void);
 /* Public Functions */
 
 /* Protected Functions */

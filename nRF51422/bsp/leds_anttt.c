@@ -33,6 +33,51 @@ Variable names shall start with "Led_" and be declared as static.
 /***********************************************************************************************************************
 * Function Definitions
 ***********************************************************************************************************************/
+void LedOn(LedNumberType _led)
+{
+  switch(_led)
+  {
+	  case RED:
+		NRF_GPIO->OUTSET |= P0_29_;
+		   break;
+	  case YLW:
+		NRF_GPIO->OUTSET |= P0_28_;
+		   break;
+	  case GRN:
+		NRF_GPIO->OUTSET |= P0_27_;
+		   break;
+	  case BLU:
+		NRF_GPIO->OUTSET |= P0_26_;
+		   break;
+	  default:
+		   break;
+	
+   
+  }
+}
+
+void LedOff(LedNumberType _led)
+{
+  switch(_led)
+  {
+	  case RED:
+		NRF_GPIO->OUTCLR |= P0_29_;
+		   break;
+	  case YLW:
+		NRF_GPIO->OUTCLR |= P0_28_;
+		   break;
+	  case GRN:
+		NRF_GPIO->OUTCLR |= P0_27_;
+		   break;
+	  case BLU:
+		NRF_GPIO->OUTCLR |= P0_26_;
+		   break;
+	  default:
+		   break;
+	
+   
+  }
+}
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* Public functions */

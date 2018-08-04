@@ -21,6 +21,7 @@ extern volatile u32 G_u32SystemTime1s;                 /* From board-specific so
 
 extern fnCode_type ANTTT_SM;
 
+
 /***********************************************************************************************************************
 Global variable definitions with scope limited to this local application.
 Variable names shall start with "Main_" and be declared as static.
@@ -42,6 +43,16 @@ contraints but must complete execution regardless of success or failure of start
 2. Main loop.  This is an event-driven system that sequentially executes tasks that require servicing in the event queue.
 
 ***********************************************************************************************************************/
+void delay(void)
+{ 
+  for(u16 i=0;i<1000;i++)
+  {
+	for(u16 j=0;j<1000;j++)
+	{
+	}
+  }
+}
+
 void main(void)
 {
   G_u32SystemFlags |= _SYSTEM_INITIALIZING;
@@ -88,6 +99,23 @@ void main(void)
     SocIntegrationHandler();
     AntttRunActiveState();
    
+	LedOn(RED);
+	delay();
+	
+	LedOn(YLW);
+	delay();
+	
+	LedOn(GRN);
+	delay();
+	
+	LedOn(BLU);
+	delay();
+	
+	LedOff(RED);
+	LedOff(YLW);
+	LedOff(GRN);
+	LedOff(BLU);
+	delay();
     /* System sleep*/
     SystemSleep();
     
